@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",               // Target ES6 (modern browsers and Node.js environments)
+      "module": "commonjs",          // Use CommonJS module format for Node.js
+      "outDir": "./lib",            // Output directory for the compiled JS
+      "rootDir": "./src",            // Root directory of your TypeScript source files
+      "strict": true,                // Enable all strict type-checking options
+      "esModuleInterop": true,       // Allows default imports from modules with no default export
+      "skipLibCheck": true,          // Skip type checking of declaration files
+      "forceConsistentCasingInFileNames": true, // Disallows inconsistently-cased references to the same file
+      "moduleResolution": "node",    // Use Node.js style module resolution
+      "declaration": true,           // Generates corresponding .d.ts file for your library
+      "resolveJsonModule": true,     // Allow importing .json files
+      "lib": ["es6", "dom"],         // Include ES6 and DOM library files in the compilation
+      "removeComments": true         // Remove comments in the compiled output
+    },
+    "include": ["src/**/*.ts"],      // Include TypeScript files in the src directory
+    "exclude": ["node_modules"]      // Exclude node_modules from the compilation
+}
+  

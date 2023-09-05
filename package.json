@@ -1,0 +1,11 @@
+{
+  "name": "ticker-search",
+  "version": "1.0.0",
+  "description": "Library for fast autocomplete functionality by searching for ticker/company name",
+  "main": "/src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
