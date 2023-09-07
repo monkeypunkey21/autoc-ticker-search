@@ -15,4 +15,23 @@ class TrieNode {
     }
 }
 
+class Trie {
+    root: TrieNode;
 
+    constructor() {
+        this.root = new TrieNode();
+    }
+
+    insert(word: string, pair: Pair) {
+
+    }
+
+    _getPairsWithPrefix(prefix: string, node: TrieNode) {
+        
+    }
+
+    search(prefix: string) {
+
+    }
+
+}
