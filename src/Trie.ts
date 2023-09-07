@@ -77,3 +77,15 @@ class Trie {
     }
 
 }
+
+const tickerTrie = new Trie();
+const companyTrie = new Trie();
+
+tickerPairs.forEach(([index, { ticker, title }]) => 
+{
+    const pair = {index, ticker, companyName: title};
+    tickerTrie.insert(ticker, pair);
+    companyTrie.insert(title, pair);
+})
+
+export {tickerTrie, companyTrie};
