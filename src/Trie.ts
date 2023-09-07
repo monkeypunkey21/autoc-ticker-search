@@ -54,7 +54,26 @@ class Trie {
     }
 
     search(prefix: string) {
+        prefix = prefix.toLowerCase();
 
+        let currentNode = this.root;
+
+        for (let i = 0; i < prefix.length; i++)
+        {
+            const char = prefix[i];
+            if (currentNode.children[char]) {
+                currentNode = currentNode.children[char];
+            }
+            else {
+                return [];
+            }
+        }
+
+        let pairs = this._getPairsWithPrefix(prefix, currentNode);
+        pairs.sort((a, b) => a.index - b.index);
+        pairs = pairs.slice(0, 6);
+
+        return pairs;
     }
 
 }
