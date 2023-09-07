@@ -23,7 +23,20 @@ class Trie {
     }
 
     insert(word: string, pair: Pair) {
+        word = word.toLowerCase();
+        let currentNode = this.root;
+        for (let i = 0; i < word.length; i++) {
+            const char = word[i];
+            
+            if (!currentNode.children[char]) {
+                currentNode.children[char] = new TrieNode();
+            }
 
+            currentNode = currentNode.children[char];
+        }
+
+        currentNode.endOfWord = true;
+        currentNode.pairs.push(pair);
     }
 
     _getPairsWithPrefix(prefix: string, node: TrieNode) {
