@@ -27,7 +27,7 @@ class Trie {
         let currentNode = this.root;
         for (let i = 0; i < word.length; i++) {
             const char = word[i];
-            
+
             if (!currentNode.children[char]) {
                 currentNode.children[char] = new TrieNode();
             }
@@ -40,7 +40,17 @@ class Trie {
     }
 
     _getPairsWithPrefix(prefix: string, node: TrieNode) {
-        
+        const pairs: Pair[] = [];
+        if (node.endOfWord) {
+            pairs.push(...node.pairs);
+        }
+
+        for (let char in node.children) {
+            const child = node.children[char];
+            const results = this._getPairsWithPrefix(prefix + char, child);
+            pairs.push(...results);
+        }
+        return pairs;
     }
 
     search(prefix: string) {
