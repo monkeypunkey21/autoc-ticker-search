@@ -12,3 +12,14 @@ const companySearch = (query: string) =>
     return companyResults;
 }
 
+const search = (query: string) =>
+{
+    const tickerResults = tickerSearch(query);
+    const companyResults = companySearch(query);
+
+    const combinedResults = [...tickerResults, ...companyResults];
+
+    return combinedResults.slice(0, 6);
+}
+
+export {tickerSearch, companySearch, search};
